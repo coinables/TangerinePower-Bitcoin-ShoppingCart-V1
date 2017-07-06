@@ -1,0 +1,1 @@
+<div id="footer">Powered By Tangerine Power Inc &copy; 2017</div>
