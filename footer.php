@@ -1,1 +1,1 @@
-<div id="footer">Powered By Tangerine Power Inc &copy; 2017</div>
+<div id="footer">Powered By <a href="https://tangerine.pw">Tangerine Power Inc</a> &copy; 2017</div>
