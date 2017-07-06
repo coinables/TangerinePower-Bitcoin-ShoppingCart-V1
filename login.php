@@ -8,10 +8,12 @@ if(!isset($_SESSION['lasttime'])){
   $_SESSION['lasttime'] = 0;
 }
 
+//deny SESSION after 5 invalid logins
+if($_SESSION['lasttime'] > 4){
+die("Too many invalid logins");
+}
+
 if(isset($_POST['submit'])){
-  if($_SESSION['lasttime'] > 3){
-  die("Too many invalid logins");
-  }
   $hashedPW = md5($adminPW);
   $pw =  md5($_POST['pw']);
   if($pw === $hashedPW){
@@ -21,6 +23,8 @@ if(isset($_POST['submit'])){
   } else {
   $message = "Invalid password";
   $_SESSION['lasttime']++;
+  //slow down brute force
+  sleep(3);
   }
 }
 
