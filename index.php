@@ -10,10 +10,10 @@ $_SESSION['tedi'] = array();
 }
 //get current exchange rate
 if(!isset($_SESSION['exr'])){
-$url = "https://btc-e.com/api/3/ticker/btc_usd";
+$url = "https://www.bitstamp.net/api/v2/ticker/BTCUSD";
 $json = json_decode(file_get_contents($url), true);
-    if(array_key_exists("btc_usd",$json)){
-        $price = $json["btc_usd"]["last"];
+    if(array_key_exists("last",$json)){
+        $price = $json["last"];
         $_SESSION['exr'] = $price;
     }
     else
